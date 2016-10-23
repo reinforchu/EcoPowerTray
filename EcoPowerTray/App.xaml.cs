@@ -3,34 +3,34 @@
 namespace EcoPowerTray
 {
     /// <summary>
-    /// App.xaml の相互作用ロジック
+    /// Interaction logic of App.xaml
     /// </summary>
     public partial class App : Application
     {
         /// <summary>
-        /// タスクトレイに常駐
+        /// Init application
         /// </summary>
-        private NotifyIcon notifyIcon;
+        private EPTApp eptApp;
 
         /// <summary>
-        /// 開始時のイベント(NotifyIcon の初期化)
+        /// Startup event
         /// </summary>
         /// <param name="e">StartupEventArgs</param>
         protected override void OnStartup(StartupEventArgs e)
         {
             base.OnStartup(e);
             ShutdownMode = ShutdownMode.OnExplicitShutdown;
-            notifyIcon = new NotifyIcon();
+            eptApp = new EPTApp();
         }
 
         /// <summary>
-        /// 終了時のイベント(リソースの解放)
+        /// Exit event (Resources dispose)
         /// </summary>
         /// <param name="e">ExitEventArgs</param>
         protected override void OnExit(ExitEventArgs e)
         {
             base.OnExit(e);
-            notifyIcon.Dispose();
+            eptApp.Dispose();
         }
     }
 }

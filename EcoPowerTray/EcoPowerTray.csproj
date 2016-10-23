@@ -78,11 +78,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NotifyIcon.cs">
+    <Compile Include="EPTApp.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="NotifyIcon.Designer.cs">
-      <DependentUpon>NotifyIcon.cs</DependentUpon>
+    <Compile Include="EPTApp.Designer.cs">
+      <DependentUpon>EPTApp.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -97,8 +97,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="NotifyIcon.resx">
-      <DependentUpon>NotifyIcon.cs</DependentUpon>
+    <EmbeddedResource Include="EPTApp.resx">
+      <DependentUpon>EPTApp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
