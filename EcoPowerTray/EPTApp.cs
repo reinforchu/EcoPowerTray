@@ -11,9 +11,8 @@ namespace EcoPowerTray
     public partial class EPTApp : Component
     {
         private CmdExec cmd = new CmdExec();
-        public static readonly string VersionBody = "EcoPowerTray Version 1.0.1.3\nCopyright (C) 2016 reinforchu\nrein@hack.vet\nhttps://github.com/reinforchu/EcoPowerTray";
-        public static readonly string LicenseBodyJP = "EcoPowerTray は、GPLv3に基づき公開しています。\n\nGNU General Public License version 3 (GPLv3)\nhttps://www.gnu.org/licenses/gpl-3.0.en.html";
-        public static readonly string ExecMissingMessageJP = "動作に必要な'powercfg.exe'が見つかりませんでした。\nアプリケーションを終了しますか？";
+        public static readonly string VersionBody = "GNU General Public License version 3 (GPLv3)\nhttps://www.gnu.org/licenses/gpl-3.0.en.html\n\nEcoPowerTray Version 1.0.2.4\nhttps://github.com/reinforchu/EcoPowerTray\nCopyright (C) reinforchu";
+        public static readonly string ExecMissingMessageJP = "動作に必要な 'powercfg.exe' が見つかりませんでした。\nアプリケーションを終了しますか？";
 
         /// <summary>
         /// Init EcoPowerTray and event handling
@@ -34,7 +33,6 @@ namespace EcoPowerTray
             toolStripMenuItem1_Balanced.Click += toolStripMenuItem1_Balanced_Click;
             toolStripMenuItem1_PowerSaver.Click += toolStripMenuItem1_PowerSaver_Click;
             toolStripMenuItem1_Info.Click += toolStripMenuItem1_Info_Click;
-            toolStripMenuItem1_License.Click += toolStripMenuItem1_License_Click;
             toolStripMenuItem1_Exit.Click += toolStripMenuItem1_Exit_Click;
         }
 
@@ -55,17 +53,7 @@ namespace EcoPowerTray
         /// <param name="e">event data</param>
         private void toolStripMenuItem1_Info_Click(object sender, EventArgs e)
         {
-            System.Windows.Forms.MessageBox.Show(VersionBody, "EcoPowerTray - About", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
-        }
-
-        /// <summary>
-        /// Show software license information
-        /// </summary>
-        /// <param name="sender">sender event object</param>
-        /// <param name="e">event data</param>
-        private void toolStripMenuItem1_License_Click(object sender, EventArgs e)
-        {
-            System.Windows.Forms.MessageBox.Show(LicenseBodyJP, "EcoPowerTray - License", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+            System.Windows.Forms.MessageBox.Show(VersionBody, "EcoPowerTray - Infomation", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
         }
 
         /// <summary>

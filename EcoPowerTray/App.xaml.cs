@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Diagnostics;
+using System.Windows;
 
 namespace EcoPowerTray
 {
@@ -18,9 +19,18 @@ namespace EcoPowerTray
         /// <param name="e">StartupEventArgs</param>
         protected override void OnStartup(StartupEventArgs e)
         {
-            base.OnStartup(e);
-            ShutdownMode = ShutdownMode.OnExplicitShutdown;
-            eptApp = new EPTApp();
+            Process MyProcess = Process.GetCurrentProcess();
+            Process[] AllProcess = Process.GetProcessesByName(MyProcess.ProcessName);
+            if (AllProcess.Length > 1)
+            {
+                System.Windows.Application.Current.Shutdown();
+            }
+            else
+            {
+                base.OnStartup(e);
+                ShutdownMode = ShutdownMode.OnExplicitShutdown;
+                eptApp = new EPTApp();
+            }
         }
 
         /// <summary>

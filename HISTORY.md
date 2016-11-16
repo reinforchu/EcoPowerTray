@@ -1,12 +1,16 @@
 # EcoPowerTray
 
-Switch the power profile in the task tray
+Switch the power profile in the task tray.
 
 ## Versions
 
+### 1.0.2.4
+
+重複起動を抑制するように改修しました。
+
 ### 1.0.1.3
 
-修正版のリリース。
+修正版のリリース。  
 設定画面の削除、文言の変更、例外処理など。
 
 ### 1.0.0.2

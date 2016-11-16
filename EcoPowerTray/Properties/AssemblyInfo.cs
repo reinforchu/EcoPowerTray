@@ -8,11 +8,11 @@ using System.Windows;
 // アセンブリに関連付けられている情報を変更するには、
 // これらの属性値を変更してください。
 [assembly: AssemblyTitle("EcoPowerTray")]
-[assembly: AssemblyDescription("Switch the power profile in the task tray")]
+[assembly: AssemblyDescription("Switch the power profile in the task tray.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("reinforchu")]
-[assembly: AssemblyProduct("EcoPowerTray 1.0.1.3")]
-[assembly: AssemblyCopyright("Copyright ©  2016 reinforchu")]
+[assembly: AssemblyProduct("EcoPowerTray 1.0.2.4")]
+[assembly: AssemblyCopyright("Copyright © reinforchu")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.1.3")]
-[assembly: AssemblyFileVersion("1.0.1.3")]
+[assembly: AssemblyVersion("1.0.2.4")]
+[assembly: AssemblyFileVersion("1.0.2.4")]
