@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.ComponentModel;
 using System.IO;
 using System.Windows.Forms;
@@ -11,7 +12,7 @@ namespace EcoPowerTray
     public partial class EPTApp : Component
     {
         private CmdExec cmd = new CmdExec();
-        public static readonly string VersionBody = "GNU General Public License version 3 (GPLv3)\nhttps://www.gnu.org/licenses/gpl-3.0.en.html\n\nEcoPowerTray Version 1.0.2.4\nhttps://github.com/reinforchu/EcoPowerTray\nCopyright (C) reinforchu";
+        public static readonly string VersionBody = "GNU General Public License version 3 (GPLv3)\nhttps://www.gnu.org/licenses/gpl-3.0.en.html\n\nEcoPowerTray Version 1.0.3.5\nhttps://github.com/reinforchu/EcoPowerTray\nCopyright (C) reinforchu";
         public static readonly string ExecMissingMessageJP = "動作に必要な 'powercfg.exe' が見つかりませんでした。\nアプリケーションを終了しますか？";
 
         /// <summary>
@@ -44,6 +45,33 @@ namespace EcoPowerTray
         {
             container.Add(this);
             InitializeComponent();
+        }
+
+        /// <summary>
+        /// Ivent listener: Power changed
+        /// </summary>
+        /// <param name="sender">sender event object</param>
+        /// <param name="e">event data</param>
+        void EventsListener_PowerChanged(object sender, PowerModeChangedEventArgs e)
+        {
+            switch (e.Mode)
+            {
+                case PowerModes.StatusChange:
+                    PowerLineStatus pStatus = SystemInformation.PowerStatus.PowerLineStatus;
+                    switch (pStatus)
+                    {
+                        case PowerLineStatus.Offline:
+                            BalloonTip("EcoPowerTray", "バッテリーに切り替わりました。", 3500);
+                            break;
+                        case PowerLineStatus.Online:
+                            BalloonTip("EcoPowerTray", "AC電源に接続されました。", 3500);
+                            break;
+                        case PowerLineStatus.Unknown:
+                            BalloonTip("EcoPowerTray", "電源の状態を検出できませんでした。", 3500);
+                            break;
+                    }
+                    break;
+            }
         }
 
         /// <summary>

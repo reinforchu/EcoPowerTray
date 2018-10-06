@@ -95,6 +95,8 @@
             this.toolStripMenuItem1_Exit.Text = "終了 (&E)";
             this.contextMenuStrip1.ResumeLayout(false);
 
+            // Power change event
+            Microsoft.Win32.SystemEvents.PowerModeChanged += new Microsoft.Win32.PowerModeChangedEventHandler(EventsListener_PowerChanged);
         }
 
         #endregion

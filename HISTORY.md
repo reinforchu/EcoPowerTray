@@ -4,6 +4,10 @@ Switch the power profile in the task tray.
 
 ## Versions
 
+### 1.0.3.5
+
+電源状態が変更された場合に通知する機能を実装しました。
+
 ### 1.0.2.4
 
 重複起動を抑制するように改修しました。
