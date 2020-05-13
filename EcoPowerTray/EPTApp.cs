@@ -35,6 +35,7 @@ namespace EcoPowerTray
             toolStripMenuItem1_PowerSaver.Click += toolStripMenuItem1_PowerSaver_Click;
             toolStripMenuItem1_Info.Click += toolStripMenuItem1_Info_Click;
             toolStripMenuItem1_Exit.Click += toolStripMenuItem1_Exit_Click;
+            notifyIcon1.Click += notifyIcon1_Click;
         }
 
         /// <summary>
@@ -85,6 +86,40 @@ namespace EcoPowerTray
         }
 
         /// <summary>
+        /// Check power plan
+        /// </summary>
+        /// <param name="sender">sender event object</param>
+        /// <param name="e">event data</param>
+        private void notifyIcon1_Click(object sender, EventArgs e)
+        {
+            string r = cmd.rExecute("powercfg.exe -GETACTIVESCHEME");
+            string[] guidArray = r.Split(' ');
+            switch (guidArray[2])
+            {
+                case "8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c":
+                    toolStripMenuItem1_HighPerformance.Checked = true;
+                    toolStripMenuItem1_Balanced.Checked = false;
+                    toolStripMenuItem1_PowerSaver.Checked = false;
+                    break;
+                case "381b4222-f694-41f0-9685-ff5bb260df2e":
+                    toolStripMenuItem1_HighPerformance.Checked = false;
+                    toolStripMenuItem1_Balanced.Checked = true;
+                    toolStripMenuItem1_PowerSaver.Checked = false;
+                    break;
+                case "a1841308-3541-4fab-bc81-f71556f20b4a":
+                    toolStripMenuItem1_HighPerformance.Checked = false;
+                    toolStripMenuItem1_Balanced.Checked = false;
+                    toolStripMenuItem1_PowerSaver.Checked = true;
+                    break;
+                default:
+                    toolStripMenuItem1_HighPerformance.Checked = false;
+                    toolStripMenuItem1_Balanced.Checked = false;
+                    toolStripMenuItem1_PowerSaver.Checked = false;
+                    break;
+            }
+        }
+
+        /// <summary>
         /// Switch HighPerformance
         /// </summary>
         /// <param name="sender">sender event object</param>
@@ -93,6 +128,9 @@ namespace EcoPowerTray
         {
             cmd.Execute("powercfg.exe -setactive SCHEME_MIN");
             BalloonTip("EcoPowerTray", "電源プランを高パフォーマンスに変更しました。", 3500);
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            item.Checked = !item.Checked;
+
         }
 
         /// <summary>
@@ -104,6 +142,8 @@ namespace EcoPowerTray
         {
             cmd.Execute("powercfg.exe -setactive SCHEME_BALANCED");
             BalloonTip("EcoPowerTray", "電源プランをバランスに変更しました。", 3500);
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            item.Checked = !item.Checked;
         }
 
         /// <summary>
@@ -115,6 +155,8 @@ namespace EcoPowerTray
         {
             cmd.Execute("powercfg.exe -setactive SCHEME_MAX");
             BalloonTip("EcoPowerTray", "電源プランを省電力に変更しました。", 3500);
+            ToolStripMenuItem item = (ToolStripMenuItem)sender;
+            item.Checked = !item.Checked;
         }
 
         /// <summary>

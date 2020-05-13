@@ -11,7 +11,7 @@ using System.Windows;
 [assembly: AssemblyDescription("Switch the power profile in the task tray.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("reinforchu")]
-[assembly: AssemblyProduct("EcoPowerTray 1.0.3.5")]
+[assembly: AssemblyProduct("EcoPowerTray 1.0.4.6")]
 [assembly: AssemblyCopyright("Copyright (C) reinforchu")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -51,5 +51,5 @@ using System.Windows;
 // すべての値を指定するか、下のように '*' を使ってビルドおよびリビジョン番号を 
 // 既定値にすることができます:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.0.3.5")]
-[assembly: AssemblyFileVersion("1.0.3.5")]
+[assembly: AssemblyVersion("1.0.4.6")]
+[assembly: AssemblyFileVersion("1.0.4.6")]

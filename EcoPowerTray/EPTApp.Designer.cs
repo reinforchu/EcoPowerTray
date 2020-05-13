@@ -49,6 +49,7 @@
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripMenuItem1_HighPerformance,
             this.toolStripMenuItem1_Balanced,
@@ -95,8 +96,6 @@
             this.toolStripMenuItem1_Exit.Text = "終了 (&E)";
             this.contextMenuStrip1.ResumeLayout(false);
 
-            // Power change event
-            Microsoft.Win32.SystemEvents.PowerModeChanged += new Microsoft.Win32.PowerModeChangedEventHandler(EventsListener_PowerChanged);
         }
 
         #endregion
