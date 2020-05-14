@@ -12,7 +12,7 @@ namespace EcoPowerTray
     public partial class EPTApp : Component
     {
         private CmdExec cmd = new CmdExec();
-        public static readonly string VersionBody = "GNU General Public License version 3 (GPLv3)\nhttps://www.gnu.org/licenses/gpl-3.0.en.html\n\nEcoPowerTray Version 1.0.3.5\nhttps://github.com/reinforchu/EcoPowerTray\nCopyright (C) reinforchu";
+        public static readonly string VersionBody = "GNU General Public License version 3 (GPLv3)\nhttps://www.gnu.org/licenses/gpl-3.0.en.html\n\nEcoPowerTray Version 1.0.4.6\nhttps://github.com/reinforchu/EcoPowerTray\nCopyright (C) reinforchu";
         public static readonly string ExecMissingMessageJP = "動作に必要な 'powercfg.exe' が見つかりませんでした。\nアプリケーションを終了しますか？";
 
         /// <summary>
